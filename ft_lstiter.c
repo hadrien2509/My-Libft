@@ -6,17 +6,17 @@
 /*   By: hgeissle <hgeissle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:13:55 by hgeissle          #+#    #+#             */
-/*   Updated: 2022/10/10 15:16:57 by hgeissle         ###   ########.fr       */
+/*   Updated: 2022/10/11 14:10:41 by hgeissle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst)
 	{	
-		f(lst);
+		f(lst->content);
 		lst = lst->next;
 	}
 }

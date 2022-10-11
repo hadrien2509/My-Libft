@@ -22,6 +22,6 @@ int	main(void)
 	char	*s6 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
 	char	*set = " \n\t";
 
-	printf("%s", ft_strtrim(s4, set));
-	printf("%zu", ft_strlcat("tamere", "lorem ipsum dolor sit amet", 5));
+	printf("long max + 1 = %d\n", atoi("9223372036854775818"));
+	printf("long min - 1 = %d, ", atoi("-9223372036854775823"));
 }

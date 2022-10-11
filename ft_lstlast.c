@@ -6,15 +6,15 @@
 /*   By: hgeissle <hgeissle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 12:52:00 by hgeissle          #+#    #+#             */
-/*   Updated: 2022/10/10 16:18:18 by hgeissle         ###   ########.fr       */
+/*   Updated: 2022/10/11 13:48:10 by hgeissle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	while (lst->next)
+	while (lst && lst->next)
 	{
 		lst = lst->next;
 	}

@@ -29,7 +29,7 @@ int	ft_set(char c, const char *set)
 char	*ft_getstring(char const *s1, char *s2, size_t start, size_t end)
 {
 	size_t	i;
-	
+
 	i = 0;
 	s2[end - start] = '\0';
 	while (start + i < end)
@@ -40,7 +40,7 @@ char	*ft_getstring(char const *s1, char *s2, size_t start, size_t end)
 	return (s2);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*s2;
 	size_t	start;

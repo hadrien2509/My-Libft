@@ -6,7 +6,7 @@
 #    By: hgeissle <hgeissle@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 14:11:25 by hgeissle          #+#    #+#              #
-#    Updated: 2022/10/10 17:56:27 by hgeissle         ###   ########.fr        #
+#    Updated: 2022/10/11 13:37:07 by hgeissle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,8 @@ BASE =  ft_isalpha.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
-		ft_lstnew.c \
+
+BONUS = ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstadd_back.c \
 		ft_lstsize.c \
@@ -62,14 +63,19 @@ FLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 OBJS = ${BASE:.c=.o}
+OBJS_BONUS = ${BONUS:.c=.o}
 
 $(NAME): $(OBJS)
 	$(AR) ${NAME} ${OBJS}
 
-all: ${NAME} 
+all: ${OBJS} ${OBJS_BONUS}
+	$(AR) ${NAME} ${OBJS} ${OBJS_BONUS}
 
-clean: 
-		${RM} ${OBJS}
+bonus: ${OBJS_BONUS}
+		$(AR) ${NAME} ${OBJS_BONUS}
+
+clean:
+		${RM} ${OBJS} ${OBJS_BONUS}
 
 fclean: clean
 		${RM} ${NAME}
