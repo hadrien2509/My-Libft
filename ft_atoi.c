@@ -15,9 +15,9 @@
 
 int	ft_atoi(const char *str)
 {
-	size_t	i;
-	int		sign;
-	long	nb;
+	size_t			i;
+	int				sign;
+	unsigned long	nb;
 
 	i = 0;
 	sign = 1;
@@ -35,9 +35,9 @@ int	ft_atoi(const char *str)
 		nb = nb * 10 + (str[i] - '0');
 		i++;
 	}
-	if ()
+	if (nb > LONG_MAX && sign == 1)
 		return (-1);
-	if ()
+	if (nb - 1 > LONG_MAX && sign == -1)
 		return (0);
-	return ((int)(sign * nb));
+	return (sign * (int)nb);
 }

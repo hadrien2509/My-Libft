@@ -37,9 +37,9 @@ char	*ft_itoa(int n)
 {
 	unsigned int	un;
 	char			*nbr;
-	char			i;
+	int				i;
 
-	i = (char)ft_nbrlen(n);
+	i = (int)ft_nbrlen(n);
 	nbr = malloc(sizeof(char) * (i + 1));
 	if (!nbr)
 		return (NULL);

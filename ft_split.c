@@ -82,6 +82,8 @@ char	**ft_split(char const *s, char c)
 {
 	char	**tab;
 
+	if (!s)
+		return (NULL);
 	tab = malloc(sizeof(char *) * (ft_strslen(s, c) + 1));
 	if (!tab)
 		return (NULL);

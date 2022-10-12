@@ -1,39 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeissle <hgeissle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/04 15:26:31 by hgeissle          #+#    #+#             */
-/*   Updated: 2022/10/06 21:09:30 by hgeissle         ###   ########.fr       */
+/*   Created: 2022/10/10 14:54:58 by hgeissle          #+#    #+#             */
+/*   Updated: 2022/10/11 13:59:02 by hgeissle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	char	*d;
-	size_t	i;
-	size_t	size;
-
-	if (!s)
-		return (NULL);
-	size = ft_strlen(s);
-	if (start > size)
-		len = 0;
-	else if (len > size - start)
-		len = size - start;
-	d = malloc(sizeof(char) * (len + 1));
-	if (!d)
-		return (NULL);
-	i = 0;
-	while (i < len && s[start + i])
+	if (lst && del)
 	{
-		d[i] = s[start + i];
-		i++;
+		del(lst->content);
+		free(lst);
 	}
-	d[i] = '\0';
-	return (d);
 }
