@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_strslen(const char *str, char c)
+static int	ft_strslen(const char *str, char c)
 {
 	int	i;
 	int	len;
@@ -35,7 +35,7 @@ int	ft_strslen(const char *str, char c)
 	return (len);
 }
 
-char	*ft_range(const char *str, int min, int max)
+static char	*ft_range(const char *str, int min, int max)
 {
 	int		i;
 	char	*range;
@@ -53,7 +53,7 @@ char	*ft_range(const char *str, int min, int max)
 	return (range);
 }
 
-char	**set_tab(const char *str, char c, char **tab)
+static char	**set_tab(const char *str, char c, char **tab)
 {
 	int	i;
 	int	len;
